@@ -627,6 +627,8 @@ class Service(object):
             platforms.set_process_title('celery beat')
 
         info('beat: Started successfully...')
+        time.sleep(10)
+        info('beat: slept 10 seconds')
         try:
             while not self._is_shutdown.is_set():
                 interval = self.scheduler.tick()
